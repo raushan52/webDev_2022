@@ -3,19 +3,10 @@
 
 <h1>Home</h1>
 <p><%= paraOne %></p>
-<!-- 
-<% for(let i = 0; i<pos.length;i++){ %>
-    <h1><%= pos[i].title %></h1>
-    <p><%= pos[i].body %></p>
 
-    <% console.log(pos[i].title); %>
-
-<% } %> -->
-
-<% pos.forEach(function(itm){ %>
-    <!-- <% console.log(itm.title); %> -->
+<% pos.forEach(function(itm){ %>    
     <h1><%= itm.title %></h1>
-    <p><%= itm.body %></p>
+    <p><%= itm.body.substring(0,101) + " ... " %><a href="/posts/<%= itm.title %>">Read More</a></p> 
 <% }); %>
 
 <%- include('partials/footer'); -%>
